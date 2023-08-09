@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { colors } from '../../styles'
+import { Link } from 'react-router-dom'
 
 export const RestaurantDiv = styled.div`
   position: relative;
@@ -16,6 +17,7 @@ export const UpText = styled.h3`
 
 export const Text = styled.p`
   font-size: 14px;
+  margin-bottom: 16px;
 `
 
 export const Avaliation = styled.div`
@@ -28,14 +30,15 @@ export const Title = styled.div`
   margin-bottom: 16px;
 `
 
-export const Button = styled.button`
+export const Button = styled(Link)`
   padding: 4px 8px;
   font-size: 14px;
   font-weight: bold;
   background-color: ${colors.salmon};
   border: none;
   color: ${colors.white};
-  margin-top: 16px;
+  cursor: pointer;
+  text-decoration: none;
 `
 
 export const Tag = styled.div`
