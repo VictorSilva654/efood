@@ -1,13 +1,5 @@
 import star from '../../assets/images/estrela.png'
-import {
-  RestaurantDiv,
-  UpText,
-  Text,
-  Title,
-  Avaliation,
-  Button
-} from './styles'
-import Tag from '../Tag'
+import * as Styles from './styles'
 
 export type Props = {
   image: string
@@ -18,23 +10,25 @@ export type Props = {
 }
 
 const Restaurant = ({ image, name, avaliation, description, tags }: Props) => (
-  <RestaurantDiv>
-    {tags.map((tag) => (
-      <Tag key={tag}>{tag}</Tag>
-    ))}
+  <Styles.RestaurantDiv>
+    <Styles.TagContainer>
+      {tags.map((tag) => (
+        <Styles.Tag key={tag}>{tag}</Styles.Tag>
+      ))}
+    </Styles.TagContainer>
     <img src={image} alt="Imagem do restaurante" />
     <div style={{ margin: '8px' }}>
-      <Title>
-        <UpText>{name}</UpText>
-        <Avaliation>
-          <UpText>{avaliation}</UpText>
+      <Styles.Title>
+        <Styles.UpText>{name}</Styles.UpText>
+        <Styles.Avaliation>
+          <Styles.UpText>{avaliation}</Styles.UpText>
           <img style={{ margin: '0 8px' }} src={star} alt="Estrela" />
-        </Avaliation>
-      </Title>
-      <Text>{description}</Text>
-      <Button>Saiba mais</Button>
+        </Styles.Avaliation>
+      </Styles.Title>
+      <Styles.Text>{description}</Styles.Text>
+      <Styles.Button>Saiba mais</Styles.Button>
     </div>
-  </RestaurantDiv>
+  </Styles.RestaurantDiv>
 )
 
 export default Restaurant
