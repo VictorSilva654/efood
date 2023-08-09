@@ -14,6 +14,7 @@ const RestaurantList = () => {
       <List>
         <ListItem>
           <Restaurant
+            tags={['Destaque da semana', 'Japonesa']}
             image={sushi}
             avaliation="4.9"
             description={descriptionSushi}
@@ -22,6 +23,7 @@ const RestaurantList = () => {
         </ListItem>
         <ListItem>
           <Restaurant
+            tags={['Italiana']}
             image={massa}
             avaliation="4.6"
             description={descriptionPasta}
@@ -30,6 +32,7 @@ const RestaurantList = () => {
         </ListItem>
         <ListItem>
           <Restaurant
+            tags={['Italiana']}
             image={massa}
             avaliation="4.6"
             description={descriptionPasta}
@@ -38,6 +41,7 @@ const RestaurantList = () => {
         </ListItem>
         <ListItem>
           <Restaurant
+            tags={['Italiana']}
             image={massa}
             avaliation="4.6"
             description={descriptionPasta}
@@ -46,6 +50,7 @@ const RestaurantList = () => {
         </ListItem>
         <ListItem>
           <Restaurant
+            tags={['Italiana']}
             image={massa}
             avaliation="4.6"
             description={descriptionPasta}
@@ -54,6 +59,7 @@ const RestaurantList = () => {
         </ListItem>
         <ListItem>
           <Restaurant
+            tags={['Italiana']}
             image={massa}
             avaliation="4.6"
             description={descriptionPasta}

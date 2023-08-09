@@ -1,10 +1,16 @@
 import styled from 'styled-components'
 import { colors } from '../../styles'
+import { TagContainer } from '../Tag/styles'
 
 export const RestaurantDiv = styled.div`
+  position: relative;
   width: 472px;
   border: 1px solid ${colors.salmon};
   color: ${colors.salmon};
+
+  ${TagContainer} {
+    margin-right: 8px;
+  }
 `
 
 export const UpText = styled.h3`

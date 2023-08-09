@@ -7,16 +7,21 @@ import {
   Avaliation,
   Button
 } from './styles'
+import Tag from '../Tag'
 
 export type Props = {
   image: string
   name: string
   avaliation: string
   description: string
+  tags: string[]
 }
 
-const Restaurant = ({ image, name, avaliation, description }: Props) => (
+const Restaurant = ({ image, name, avaliation, description, tags }: Props) => (
   <RestaurantDiv>
+    {tags.map((tag) => (
+      <Tag key={tag}>{tag}</Tag>
+    ))}
     <img src={image} alt="Imagem do restaurante" />
     <div style={{ margin: '8px' }}>
       <Title>
