@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 export const RestaurantDiv = styled.div`
   position: relative;
   width: 472px;
+  height: 398px;
   border: 1px solid ${colors.salmon};
   color: ${colors.salmon};
 `

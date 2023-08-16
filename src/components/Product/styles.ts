@@ -4,6 +4,7 @@ import styled from 'styled-components'
 export const ProductDiv = styled.div`
   background-color: ${colors.salmon};
   width: 320px;
+  height: 338px;
   color: ${colors.white};
   padding: 8px;
 `
