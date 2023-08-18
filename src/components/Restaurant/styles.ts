@@ -8,6 +8,13 @@ export const RestaurantDiv = styled.div`
   height: 398px;
   border: 1px solid ${colors.salmon};
   color: ${colors.salmon};
+
+  > img {
+    height: 217px;
+    width: 472px;
+    max-width: 100%;
+    object-fit: cover;
+  }
 `
 
 export const UpText = styled.h3`
