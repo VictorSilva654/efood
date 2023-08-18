@@ -1,71 +1,30 @@
+import { useEffect, useState } from 'react'
 import Restaurant from '../Restaurant'
-import sushi from '../../assets/images/sushi.png'
-import massa from '../../assets/images/massa.png'
+import { RestaurantType } from '../Restaurant'
 import { List, ListItem } from './styles'
+import { useParams } from 'react-router-dom'
 
-const RestaurantList = () => {
-  const descriptionSushi =
-    'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão sem sair do lar com nosso delivery!'
+export type Props = {
+  restaurants: RestaurantType[]
+}
 
-  const descriptionPasta =
-    'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!'
+const RestaurantList = ({ restaurants }: Props) => {
+  if (!restaurants) <h3>Carregando...</h3>
+
   return (
     <div className="container">
       <List>
-        <ListItem>
-          <Restaurant
-            tags={['Destaque da semana', 'Japonesa']}
-            image={sushi}
-            avaliation="4.9"
-            description={descriptionSushi}
-            name="Hioki Sushi"
-          />
-        </ListItem>
-        <ListItem>
-          <Restaurant
-            tags={['Italiana']}
-            image={massa}
-            avaliation="4.6"
-            description={descriptionPasta}
-            name="La Dolce Vita Trattoria"
-          />
-        </ListItem>
-        <ListItem>
-          <Restaurant
-            tags={['Italiana']}
-            image={massa}
-            avaliation="4.6"
-            description={descriptionPasta}
-            name="La Dolce Vita Trattoria"
-          />
-        </ListItem>
-        <ListItem>
-          <Restaurant
-            tags={['Italiana']}
-            image={massa}
-            avaliation="4.6"
-            description={descriptionPasta}
-            name="La Dolce Vita Trattoria"
-          />
-        </ListItem>
-        <ListItem>
-          <Restaurant
-            tags={['Italiana']}
-            image={massa}
-            avaliation="4.6"
-            description={descriptionPasta}
-            name="La Dolce Vita Trattoria"
-          />
-        </ListItem>
-        <ListItem>
-          <Restaurant
-            tags={['Italiana']}
-            image={massa}
-            avaliation="4.6"
-            description={descriptionPasta}
-            name="La Dolce Vita Trattoria"
-          />
-        </ListItem>
+        {restaurants.map((restaurant) => (
+          <ListItem key={restaurant?.id}>
+            <Restaurant
+              tags={[restaurant?.tipo]}
+              image={restaurant?.capa}
+              avaliation={restaurant?.avaliacao}
+              description={restaurant?.descricao}
+              name={restaurant?.titulo}
+            />
+          </ListItem>
+        ))}
       </List>
     </div>
   )
