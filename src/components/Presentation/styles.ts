@@ -1,11 +1,12 @@
 import styled from 'styled-components'
-import fundo from '../../assets/images/fundo_italiana.png'
 import { colors } from '../../styles'
 
 export const BackgroundDiv = styled.div`
-  background-image: url(${fundo});
   background-repeat: no-repeat;
   background-size: cover;
+  height: 280px;
+  background-position: center;
+  width: 100%;
 `
 
 export const PresentationDiv = styled.div`

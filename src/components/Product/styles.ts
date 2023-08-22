@@ -7,6 +7,12 @@ export const ProductDiv = styled.div`
   height: 338px;
   color: ${colors.white};
   padding: 8px;
+
+  .product-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 `
 
 export const Title = styled.h4`

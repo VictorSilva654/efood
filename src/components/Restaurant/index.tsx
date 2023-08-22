@@ -9,16 +9,16 @@ export type RestaurantType = {
   avaliacao: string
   descricao: string
   capa: string
-  cardapio: [
-    {
-      foto: string
-      preco: number
-      id: number
-      nome: string
-      descricao: string
-      porcao: string
-    }
-  ]
+  cardapio: Cardapio[]
+}
+
+export type Cardapio = {
+  foto: string
+  preco: number
+  id: number
+  nome: string
+  descricao: string
+  porcao: number
 }
 
 export type Props = {
@@ -27,9 +27,17 @@ export type Props = {
   avaliation: string
   description: string
   tags: string[]
+  id: number
 }
 
-const Restaurant = ({ image, name, avaliation, description, tags }: Props) => (
+const Restaurant = ({
+  image,
+  name,
+  avaliation,
+  description,
+  tags,
+  id
+}: Props) => (
   <Styles.RestaurantDiv>
     <Styles.TagContainer>
       {tags.map((tag) => (
@@ -46,7 +54,7 @@ const Restaurant = ({ image, name, avaliation, description, tags }: Props) => (
         </Styles.Avaliation>
       </Styles.Title>
       <Styles.Text>{description}</Styles.Text>
-      <Styles.Button to="/perfil">Saiba mais</Styles.Button>
+      <Styles.Button to={`/perfil/${id}`}>Saiba mais</Styles.Button>
     </div>
   </Styles.RestaurantDiv>
 )
