@@ -1,5 +1,5 @@
 import { BackgroundDiv, PresentationDiv, SoftTitle, Title } from './styles'
-import { RestaurantType } from '../Restaurant'
+import { RestaurantType, toCapitalize } from '../Restaurant'
 
 type Props = {
   restaurant: RestaurantType
@@ -10,7 +10,7 @@ const Presentation = ({ restaurant }: Props) => {
     <BackgroundDiv style={{ backgroundImage: `url(${restaurant.capa})` }}>
       <PresentationDiv>
         <div className="container">
-          <SoftTitle>{restaurant.tipo}</SoftTitle>
+          <SoftTitle>{toCapitalize(restaurant.tipo)}</SoftTitle>
           <Title>{restaurant.titulo}</Title>
         </div>
       </PresentationDiv>

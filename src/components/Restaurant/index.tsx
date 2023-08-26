@@ -30,6 +30,11 @@ export type Props = {
   id: number
 }
 
+export const toCapitalize = (str: string) => {
+  const lower = str.toLowerCase()
+  return str.charAt(0).toUpperCase() + lower.slice(1)
+}
+
 const Restaurant = ({
   image,
   name,
@@ -41,7 +46,7 @@ const Restaurant = ({
   <Styles.RestaurantDiv>
     <Styles.TagContainer>
       {tags.map((tag) => (
-        <Styles.Tag key={tag}>{tag}</Styles.Tag>
+        <Styles.Tag key={tag}>{toCapitalize(tag)}</Styles.Tag>
       ))}
     </Styles.TagContainer>
     <img src={image} alt="Imagem do restaurante" />

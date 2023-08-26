@@ -19,7 +19,9 @@ const Product = ({ image, title, description, onClick }: Props) => {
       <img src={image} alt="" style={{ width: '304px', height: '167px' }} />
       <div className="product-container">
         <Title>{title}</Title>
-        <Description>{getDescription(description)}</Description>
+        <div className="text-container">
+          <Description>{getDescription(description)}</Description>
+        </div>
         <Button onClick={onClick}>Adicionar ao carrinho</Button>
       </div>
     </ProductDiv>

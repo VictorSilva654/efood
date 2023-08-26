@@ -8,13 +8,11 @@ export const ProductDiv = styled.div`
   color: ${colors.white};
   padding: 8px;
 
-  .product-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  .text-container {
+    height: 80px;
+    width: 304px;
   }
 `
-
 export const Title = styled.h4`
   font-size: 16px;
   font-weight: 900;
@@ -23,10 +21,11 @@ export const Title = styled.h4`
 
 export const Description = styled.p`
   font-size: 14px;
-  margin-bottom: 8px;
+  line-height: 22px;
 `
 
 export const Button = styled.button`
+  margin: 8px 0;
   padding: 4px 8px;
   width: 304px;
   font-size: 14px;
