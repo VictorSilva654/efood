@@ -23,4 +23,5 @@ export const Title = styled.h2`
   font-weight: 900;
   line-height: 21px;
   color: ${colors.salmon};
+  cursor: pointer;
 `

@@ -2,7 +2,9 @@ import { useState } from 'react'
 import { Cardapio } from '../Restaurant'
 import Product from '../Product'
 import { List, ListItem, Modal, ModalContainer, Button } from './styles'
+import { add as adicionar, open } from '../../store/reducers/cart'
 import fechar from '../../assets/images/fechar.png'
+import { useDispatch } from 'react-redux'
 
 export type Props = {
   cardapio: Cardapio[]
@@ -20,6 +22,8 @@ export const formatPrice = (price = 0) => {
 }
 
 const ProductsList = ({ cardapio }: Props) => {
+  const dispatch = useDispatch()
+
   if (!cardapio) <h3>Carregando...</h3>
   const [modal, setModal] = useState<Modal>({
     isVisible: false,
@@ -79,9 +83,13 @@ const ProductsList = ({ cardapio }: Props) => {
               <h4>{modal.nome}</h4>
               <p>{modal.descricao}</p>
               <p>Serve: {modal.porcao}</p>
-              <Button>{`Adicionar ao carrinho - ${formatPrice(
-                modal.preco
-              )}`}</Button>
+              <Button
+                onClick={() => {
+                  dispatch(adicionar(modal))
+                  dispatch(open())
+                  closeModal()
+                }}
+              >{`Adicionar ao carrinho - ${formatPrice(modal.preco)}`}</Button>
             </div>
           </div>
           <img
