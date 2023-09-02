@@ -6,11 +6,10 @@ export const List = styled.ul`
   margin-bottom: 120px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  gap: 32px;
 `
 
-export const ListItem = styled.li`
-  margin: 32px;
-`
+export const ListItem = styled.li``
 
 export const Modal = styled.div`
   position: fixed;
