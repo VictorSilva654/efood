@@ -1,5 +1,5 @@
 import { BackgroundDiv, PresentationDiv, SoftTitle, Title } from './styles'
-import { RestaurantType, toCapitalize } from '../Restaurant'
+import { toCapitalize } from '../../utils'
 
 type Props = {
   restaurant: RestaurantType

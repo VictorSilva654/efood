@@ -1,39 +1,22 @@
 import { useSelector, useDispatch } from 'react-redux'
-import img from '../../assets/images/massa.png'
 import { RootReducer } from '../../store'
-import { remove, close } from '../../store/reducers/cart'
-import {
-  Sidebar,
-  Overlay,
-  CartContainer,
-  CartItem,
-  ButtonContinue
-} from './styles'
-import { formatPrice } from '../ProductsList'
+import { remove } from '../../store/reducers/cart'
+import { CartItem, ButtonContinue, CartContainer } from './styles'
+import Sidebar from '../Sidebar'
+import { formatPrice, getTotalPrice } from '../../utils'
 
 const Cart = () => {
-  const { visible, items } = useSelector((state: RootReducer) => state.cart)
+  const { items } = useSelector((state: RootReducer) => state.cart)
 
   const dispatch = useDispatch()
-
-  const closeCart = () => {
-    dispatch(close())
-  }
-
-  const getTotalPrice = () => {
-    return items.reduce((acumulador, valorAtual) => {
-      return (acumulador += valorAtual.preco!)
-    }, 0)
-  }
 
   const removeItem = (id: number) => {
     dispatch(remove(id))
   }
 
   return (
-    <CartContainer className={visible ? 'visible' : ''}>
-      <Overlay onClick={closeCart} />
-      <Sidebar>
+    <Sidebar>
+      <CartContainer>
         <ul>
           {items.map((item) => (
             <CartItem key={item.id}>
@@ -52,11 +35,11 @@ const Cart = () => {
         </ul>
         <div className="total-price">
           <p>Valor total</p>
-          <p>{formatPrice(getTotalPrice())}</p>
+          <p>{formatPrice(getTotalPrice(items))}</p>
         </div>
         <ButtonContinue>Continuar com a entrega</ButtonContinue>
-      </Sidebar>
-    </CartContainer>
+      </CartContainer>
+    </Sidebar>
   )
 }
 

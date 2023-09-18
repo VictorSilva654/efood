@@ -1,5 +1,4 @@
 import Restaurant from '../Restaurant'
-import { RestaurantType } from '../Restaurant'
 import { List, ListItem } from './styles'
 
 export type Props = {

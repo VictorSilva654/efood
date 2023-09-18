@@ -1,25 +1,6 @@
 import star from '../../assets/images/estrela.png'
 import * as Styles from './styles'
-
-export type RestaurantType = {
-  id: number
-  titulo: string
-  destacado: boolean
-  tipo: string
-  avaliacao: string
-  descricao: string
-  capa: string
-  cardapio: Cardapio[]
-}
-
-export type Cardapio = {
-  foto: string
-  preco: number
-  id: number
-  nome: string
-  descricao: string
-  porcao: number
-}
+import { toCapitalize } from '../../utils'
 
 export type Props = {
   image: string
@@ -28,11 +9,6 @@ export type Props = {
   description: string
   tags: string[]
   id: number
-}
-
-export const toCapitalize = (str: string) => {
-  const lower = str.toLowerCase()
-  return str.charAt(0).toUpperCase() + lower.slice(1)
 }
 
 const Restaurant = ({

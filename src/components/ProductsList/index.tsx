@@ -1,10 +1,10 @@
 import { useState } from 'react'
-import { Cardapio } from '../Restaurant'
+import { useDispatch } from 'react-redux'
 import Product from '../Product'
 import { List, ListItem, Modal, ModalContainer, Button } from './styles'
 import { add as adicionar, open } from '../../store/reducers/cart'
+import { formatPrice } from '../../utils'
 import fechar from '../../assets/images/fechar.png'
-import { useDispatch } from 'react-redux'
 
 export type Props = {
   cardapio: Cardapio[]
@@ -12,13 +12,6 @@ export type Props = {
 
 interface Modal extends Cardapio {
   isVisible: boolean
-}
-
-export const formatPrice = (price = 0) => {
-  return new Intl.NumberFormat('pt-br', {
-    style: 'currency',
-    currency: 'BRL'
-  }).format(price)
 }
 
 const ProductsList = ({ cardapio }: Props) => {
