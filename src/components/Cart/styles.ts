@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { HashLink as RouterLink } from 'react-router-hash-link'
 import { colors } from '../../styles'
 import lixeira from '../../assets/images/lixeira.png'
 
@@ -61,8 +62,11 @@ export const CartItem = styled.li`
   }
 `
 
-export const ButtonContinue = styled.button`
+export const ButtonContinue = styled(RouterLink)`
   background-color: ${colors.white};
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
   color: ${colors.salmon};
   width: 100%;
   border: none;

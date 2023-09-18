@@ -15,7 +15,7 @@ const Cart = () => {
   }
 
   return (
-    <Sidebar>
+    <Sidebar id="cart">
       <CartContainer>
         <ul>
           {items.map((item) => (
@@ -37,7 +37,7 @@ const Cart = () => {
           <p>Valor total</p>
           <p>{formatPrice(getTotalPrice(items))}</p>
         </div>
-        <ButtonContinue>Continuar com a entrega</ButtonContinue>
+        <ButtonContinue to="/#delivery">Continuar com a entrega</ButtonContinue>
       </CartContainer>
     </Sidebar>
   )

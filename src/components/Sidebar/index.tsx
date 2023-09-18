@@ -5,9 +5,10 @@ import { close } from '../../store/reducers/cart'
 
 type Props = {
   children: JSX.Element
+  id: string
 }
 
-const Sidebar = ({ children }: Props) => {
+const Sidebar = ({ children, id }: Props) => {
   const { visible } = useSelector((state: RootReducer) => state.cart)
 
   const dispatch = useDispatch()
@@ -17,7 +18,7 @@ const Sidebar = ({ children }: Props) => {
   }
 
   return (
-    <Container className={visible ? 'visible' : ''}>
+    <Container id={id} className={visible ? 'visible' : ''}>
       <Overlay onClick={closeContainer} />
       <Content>{children}</Content>
     </Container>
