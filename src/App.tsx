@@ -5,8 +5,6 @@ import { GlobalStyle } from './styles'
 import { Provider } from 'react-redux'
 import { store } from './store'
 import Cart from './components/Cart'
-import Delivery from './components/Delivery'
-
 function App() {
   return (
     <Provider store={store}>
@@ -15,7 +13,6 @@ function App() {
         <Rotas />
         <Footer />
         <Cart />
-        <Delivery />
       </BrowserRouter>
     </Provider>
   )

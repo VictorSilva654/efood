@@ -20,7 +20,9 @@ const Header = () => {
         <Link to="/">
           <Logo src={logo} alt="Efood" />
         </Link>
-        <TitleLink to="/#cart">{items.length} produto(s) no carrinho</TitleLink>
+        <TitleLink onClick={openCart}>
+          {items.length} produto(s) no carrinho
+        </TitleLink>
       </div>
     </HeaderDiv>
   )

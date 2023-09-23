@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 import fundo from '../../assets/images/fundo.png'
 import { colors } from '../../styles'
-import { HashLink } from 'react-router-hash-link'
 
 export const HeaderDiv = styled.header`
   height: 186px;
@@ -20,7 +19,7 @@ export const Logo = styled.img`
   width: 125px;
 `
 
-export const TitleLink = styled(HashLink)`
+export const TitleLink = styled.h2`
   font-size: 18px;
   text-decoration: none;
   font-weight: 900;
